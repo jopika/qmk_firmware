@@ -32,6 +32,18 @@ led_setup_t leds_yellow[] = {
     { .end = 1 },
 };
 
+//Cyan
+led_setup_t leds_cyan[] = {
+    { .hs = 0, .he = 100, .rs = 0, .re = 0, .gs = 255, .ge = 255, .bs = 255, .be = 255, .ef = EF_NONE },
+    { .end = 1 },
+};
+
+//Bright Cyan
+led_setup_t leds_bright_cyan[] = { //75,239,253
+    { .hs = 0, .he = 100, .rs = 75, .re = 75, .gs = 239, .ge = 239, .bs = 253, .be = 253, .ef = EF_NONE },
+    { .end = 1 },
+};
+
 //Off
 led_setup_t leds_off[] = {
     { .hs = 0, .he = 100, .rs = 0, .re = 0, .gs = 0, .ge = 0, .bs = 0, .be = 0, .ef = EF_NONE },
@@ -105,8 +117,8 @@ led_setup_t leds_rainbow_s[] = {
 
 void *led_setups[] = {
     leds_off,
-    leds_rainbow_s,
-    leds_rainbow_ns,
+    leds_cyan,
+    leds_bright_cyan,
     leds_teal_salmon,
     leds_yellow,
     leds_red,
@@ -115,6 +127,8 @@ void *led_setups[] = {
     leds_white,
     leds_white_with_red_stripe,
     leds_black_with_red_stripe,
+    leds_rainbow_s,
+    leds_rainbow_ns,
 };
 
 const uint8_t led_setups_count = sizeof(led_setups) / sizeof(led_setups[0]);
